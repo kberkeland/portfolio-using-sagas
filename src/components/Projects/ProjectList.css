@@ -1,0 +1,12 @@
+.card {
+    display: 'flex';
+}
+
+.card-details {
+    display: 'flex';
+    flex-direction: 'column';
+}
+
+.card-media {
+    width: 151;
+}

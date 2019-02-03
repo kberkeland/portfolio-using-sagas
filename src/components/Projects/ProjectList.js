@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ProjectList.css';
 
 // material-ui import statements
 import Grid from '@material-ui/core/Grid';
@@ -21,8 +22,14 @@ import Tooltip from '@material-ui/core/Tooltip';
 class ProjectList extends Component {
     render() {
         return (
-            <Grid item md={6}>
-                <Card>
+            // <Grid item md={6} className="card">
+                <Card className="card">
+                    <CardMedia
+                        className="card-media"
+                        component="img"
+                        src={this.props.project.thumbnail}
+                    />
+                    <div className="card-details">
                     <CardContent>
                         <Typography component="h5" variant="h5">
                             { this.props.project.name }
@@ -30,12 +37,15 @@ class ProjectList extends Component {
                         <Typography gutterBottom variant="h5" component="h2">
                             {this.props.project.github }
                         </Typography>
+                        <Typography>
+                        </Typography>
                         <Typography component="p">
                                 {this.props.project.description}
                         </Typography>
                     </CardContent>
+                    </div>
                 </Card>
-            </Grid>
+            // </Grid>
         )
     }
 }

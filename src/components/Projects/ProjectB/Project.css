@@ -1,0 +1,11 @@
+.grid-root {
+    display: 'flex';
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: 'hidden';
+}
+
+.grid-list {
+    width: 500;
+    height: 450;
+}

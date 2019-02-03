@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './../Projects/Header.js';
-import ProjectHome from './../Projects/ProjectHome.js';
+// import ProjectHome from './../Projects/ProjectHome.js';
+import ProjectHomeB from './../Projects/ProjectB/ProjectHomeB.js';
 import { connect } from 'react-redux';
+
+// material-ui imports
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 class App extends Component {
 
@@ -23,7 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <ProjectHome />
+        <ProjectHomeB />
       </div>
     );
   }
