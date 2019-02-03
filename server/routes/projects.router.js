@@ -16,3 +16,5 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     });
 }); // end projects GET
+
+module.exports = router;

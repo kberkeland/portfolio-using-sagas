@@ -14,8 +14,8 @@ class ProjectHome extends Component {
             <div>
                 <Paper elevation={1}>
                     <Grid container spacing={24}>
-                        { this.props.reduxState.projects.map((projects) => (
-                            <ProjectList key={projects.id} projects={projects} />
+                        { this.props.reduxStore.projects.map((project) => (
+                            <ProjectList key={project.id} project={project} />
                         ))}
                     </Grid>
                 </Paper>
