@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './../Projects/Header.js';
 import ProjectHome from './../Projects/ProjectHome.js';
+import { connect } from 'react-redux';
 
 class App extends Component {
 
@@ -28,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);
