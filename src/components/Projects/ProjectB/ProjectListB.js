@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import './Project.css';
 
 // material-ui import statements
-import GridListTile from '@material-ui/core/GridListTile';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
 class ProjectListB extends Component {
     render() {
         return (
-            <Grid container spacing={16}>
+            <Grid className="grid-test"  container spacing={16}
+            direction="row"
+            justify="center"
+            alignItems="center">
                 <Grid item>
                     <img src={this.props.project.thumbnail} />
                 </Grid>
@@ -29,7 +31,7 @@ class ProjectListB extends Component {
                     </Grid>
                     <Grid item>
                         <Typography variant="subtitle1">
-                            {this.props.project.tag_id}
+                            {this.props.project.tag_name}
                     </Typography>
                     </Grid>
                 </Grid>

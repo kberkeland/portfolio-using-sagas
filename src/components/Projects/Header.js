@@ -7,6 +7,7 @@ class Header extends Component {
             <div>
                 <header className="header">
                     <h1 className="title">Portfolio</h1>
+                    <h2 className="title">Kye Berkeland</h2>
                 </header>
             </div>
         )

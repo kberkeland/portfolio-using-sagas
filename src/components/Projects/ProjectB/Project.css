@@ -9,3 +9,7 @@
     width: 500;
     height: 450;
 }
+
+.grid-test {
+    max-width: 768px;
+}

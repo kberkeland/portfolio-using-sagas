@@ -14,7 +14,7 @@ class ProjectHome extends Component {
     render() {
         return (
             <div>
-                <Paper elevation={1}>
+                <Paper justify="center" elevation={1}>
                         { this.props.reduxStore.projects.map((project) => (
                             <ProjectListB key={project.id} project={project} />
                         ))}
