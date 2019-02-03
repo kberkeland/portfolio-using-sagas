@@ -15,6 +15,6 @@ router.get('/', (req, res) => {
         console.log(`Error in router tags GET: ${error}`);
         res.sendStatus(500);
     });
-}); // END GET Route
+}); // end tags GET
 
 module.exports = router;
