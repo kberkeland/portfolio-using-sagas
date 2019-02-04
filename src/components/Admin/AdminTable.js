@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import AdminTableItems from './AdminTableItems.js';
+import { connect } from 'react-redux';
 
 // material-ui imput statements
 import Table from '@material-ui/core/Table';
@@ -16,18 +18,13 @@ class AdminTable extends Component {
                 <Table className="table-css">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Feeling</TableCell>
-                            <TableCell>Comprehension</TableCell>
-                            <TableCell>Support</TableCell>
-                            <TableCell>Comments</TableCell>
-                            <TableCell>Date</TableCell>
-                            <TableCell>Flag for review</TableCell>
+                            <TableCell>Project</TableCell>
                             <TableCell>Delete?</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {this.state.feedbackArray.map(feedback => (
-                            <AdminFormItem key={feedback.id} feedback={feedback} getFeedbackData={this.getFeedbackData} />
+                        {this.props.reduxStore.projects.map(projects => (
+                            <AdminTableItems key={projects.id} projects={projects} />
                         ))}
                     </TableBody>
                 </Table>
@@ -36,4 +33,8 @@ class AdminTable extends Component {
     }
 }
 
-export default AdminTable;
+const mapStoreToProps = reduxStore => ({
+    reduxStore,
+});
+
+export default connect(mapStoreToProps)(AdminTable);

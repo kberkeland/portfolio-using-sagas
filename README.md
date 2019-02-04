@@ -62,12 +62,12 @@ Place thumbnail images in the `public/images` folder.
 - [ ] Each project should conditionally render a name, description, thumbnail, website, date complete and a tag. Many of the fields are optional, only show properties that aren't null.
 - [ ] Include a link to GitHub that opens in a new window
 - [X] Add your name at the top of the page
-- [ ] Use Sagas for API requests to your server
+- [X] Use Sagas for API requests to your server
 
 ### Admin Page
 
 - [ ] Client side route that displays a form allowing you to add a new project to your portfolio
-- [ ] Include a drop down menu with a list of tags
+- [X] Include a drop down menu with a list of tags
 - [ ] Send data to the server and notify the user of success or failure
 - [ ] List projects by name and allow the user to delete them
 - [ ] Include a button that navigates to the project page

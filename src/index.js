@@ -16,7 +16,21 @@ import { takeEvery, put } from 'redux-saga/effects';
 function* rootSaga() {
     yield takeEvery('GET_PROJECTS', getProjects);
     yield takeEvery('GET_TAGS', getTags);
+    yield takeEvery('ADD_PROJECT', addProject);
+    yield takeEvery('DELETE_PLANT', deleteProject);
 }
+
+// saga that will POST a new project to the database
+function* addProject(action) {
+    try {
+        yield axios.post('/projects', action.payload);
+        const nextAction = {type: 'GET_PROJECTS'};
+        yield put(nextAction);
+    } catch (error) {
+        // console log message for POST error
+        console.log(`Error with addProject: ${error}`);
+    }
+} // end addProject
 
 // saga that calls to the server to GET projects then adds them to redux
 function* getProjects() {
@@ -30,6 +44,18 @@ function* getProjects() {
         console.log(`Error with getProjects saga: ${error}`);
     }
 } // end getProjects
+
+// saga function for DELETE where a project is passed in
+function* deleteProject(action) {
+    try {
+        yield axios.delete(`/api/plant?id=${action.payload}`);
+        const nextAction = {type: 'GET_PROJECTS'};
+        yield put(nextAction);
+    } catch (error) {
+        // console log message for DELETE error
+        console.log(`Error in deleteProject: ${error}`);
+    }
+} // end deleteProject
   
 // saga that calls to the server to GET projects then adds them to redux
 function* getTags() {
