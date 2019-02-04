@@ -25,10 +25,10 @@ class ProjectListB extends Component {
                             </Typography>
                             <Grid item >
                             <Typography gutterBottom >
-                                {this.props.project.github != null ? <GitHubLink github={this.props.project.github}/> : ""}
+                                {this.props.project.github != null ? <a href={this.props.project.github} target="_blank">GitHub</a>: ""}
                             </Typography>
                             <Typography gutterBottom >
-                                {this.props.project.website != null ? <WebsiteLink website={this.props.project.website}/> : ""}
+                                {this.props.project.website != null ? <a href={this.props.project.website} target="_blank">Website</a> : ""}
                             </Typography>
                             </Grid>
                             <Typography component="p">

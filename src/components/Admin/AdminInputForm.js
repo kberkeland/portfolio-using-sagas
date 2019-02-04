@@ -25,27 +25,27 @@ class AdminInputForm extends Component {
         githubIn: null,
         websiteIn: null,
         descriptionIn: null,
-        dateIn: new Date('2019-02-01'),
+        dateIn: new Date,
       }
     }
   }
 
   handleChange = event => {
-    this.setState({ 
+    this.setState({
       newProject: {
-        ...this.state.newProject, 
+        ...this.state.newProject,
         [event.target.name]: event.target.value,
       }
-      });
+    });
   };
 
   handleDateChange = date => {
     this.setState({
       newProject: {
-        ...this.state.newProject, 
+        ...this.state.newProject,
         dateIn: date,
       }
-      });
+    });
   };
 
   addProject = (event) => {
@@ -55,22 +55,21 @@ class AdminInputForm extends Component {
     this.props.dispatch({ type: 'ADD_PROJECT', payload: this.state.newProject });
     swal("Project added", "You have added a new project.", "success");
     this.setState({
-        newProject: {
-          nameIn: '',
-          tagIn: '',
-          githubIn: '',
-          websiteIn: '',
-          descriptionIn: '',
-          dateIn: new Date('2019-02-01'),
-        }
-      });
+      newProject: {
+        nameIn: null,
+        tagIn: null,
+        githubIn: null,
+        websiteIn: null,
+        descriptionIn: null,
+        dateIn: new Date,
+      }
+    });
 
   };
 
   render() {
     return (
       <form onSubmit={this.addProject}>
-        {JSON.stringify(this.state.newProject)}
         <Grid container spacing={8} alignItems="flex-end">
           <Grid item>
             <TextField
