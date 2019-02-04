@@ -3,6 +3,7 @@ import './App.css';
 import Header from './../Projects/Header.js';
 // import ProjectHome from './../Projects/ProjectHome.js';
 import ProjectHomeB from './../Projects/ProjectB/ProjectHomeB.js';
+import AdminPage from './../Admin/AdminPage.js';
 import { connect } from 'react-redux';
 
 // material-ui imports
@@ -27,7 +28,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <ProjectHomeB />
+        <AdminPage />
+        {/* <ProjectHomeB /> */}
       </div>
     );
   }
