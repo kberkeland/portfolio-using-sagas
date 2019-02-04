@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './../Projects/Header.js';
-// import ProjectHome from './../Projects/ProjectHome.js';
-import ProjectHomeB from './../Projects/ProjectB/ProjectHomeB.js';
+import ProjectHome from './../Projects/ProjectHome.js';
 import AdminPage from './../Admin/AdminPage.js';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Link as RouterLink, Route } from 'react-router-dom';
-
-// material-ui imports
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 class App extends Component {
 
@@ -29,7 +24,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={ProjectHomeB} />
+          <Route exact path="/" component={ProjectHome} />
           <Route exact path="/admin" component={AdminPage} />
         </div>
       </Router>

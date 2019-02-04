@@ -1,12 +1,15 @@
-.card {
+.grid-root {
     display: 'flex';
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: 'hidden';
 }
 
-.card-details {
-    display: 'flex';
-    flex-direction: 'column';
+.grid-list {
+    width: 500;
+    height: 450;
 }
 
-.card-media {
-    width: 151;
+.grid-test {
+    max-width: 768px;
 }
