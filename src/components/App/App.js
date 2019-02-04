@@ -5,6 +5,7 @@ import Header from './../Projects/Header.js';
 import ProjectHomeB from './../Projects/ProjectB/ProjectHomeB.js';
 import AdminPage from './../Admin/AdminPage.js';
 import { connect } from 'react-redux';
+import { HashRouter as Router, Link as RouterLink, Route } from 'react-router-dom';
 
 // material-ui imports
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -26,11 +27,12 @@ class App extends Component {
   // Renders the entire app on the DOM
   render() {
     return (
-      <div className="App">
-        <Header />
-        <AdminPage />
-        {/* <ProjectHomeB /> */}
-      </div>
+      <Router>
+        <div className="App">
+          <Route exact path="/" component={ProjectHomeB} />
+          <Route exact path="/admin" component={AdminPage} />
+        </div>
+      </Router>
     );
   }
 }

@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 
 // material-ui input statements
-import IconButton from '@material-ui/core/IconButton';
-import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Select from '@material-ui/core/Select';
 import Grid from '@material-ui/core/Grid';
 import { MuiPickersUtilsProvider, DatePicker } from 'material-ui-pickers';
 import DateFnsUtils from '@date-io/date-fns';
-import moment from 'moment';
 import Button from '@material-ui/core/Button';
 
 class AdminInputForm extends Component {
@@ -27,11 +20,11 @@ class AdminInputForm extends Component {
     super(props);
     this.state = {
       newProject: {
-        nameIn: '',
-        tagIn: '',
-        githubIn: '',
-        websiteIn: '',
-        descriptionIn: '',
+        nameIn: null,
+        tagIn: null,
+        githubIn: null,
+        websiteIn: null,
+        descriptionIn: null,
         dateIn: new Date('2019-02-01'),
       }
     }
@@ -59,7 +52,8 @@ class AdminInputForm extends Component {
     // prevent the form from refreshing the DOM
     event.preventDefault();
     // add path and description to an object for the database
-    this.props.dispatch({ type: 'ADD_PROJECT', payload: this.state.newProject })
+    this.props.dispatch({ type: 'ADD_PROJECT', payload: this.state.newProject });
+    swal("Project added", "You have added a new project.", "success");
     this.setState({
         newProject: {
           nameIn: '',
@@ -106,7 +100,7 @@ class AdminInputForm extends Component {
               }
             >
               {this.props.reduxStore.tags.map(option => (
-                <MenuItem key={option.id} value={option.name}>
+                <MenuItem key={option.id} value={option.id}>
                   {option.name}
                 </MenuItem>
               ))}

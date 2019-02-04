@@ -1,0 +1,11 @@
+.admin-header {
+    background-color: green;
+    min-height: 70px;
+    padding: 20px;
+    color: white;
+}
+
+
+.admin-title {
+    font-size: 1.5em;
+}

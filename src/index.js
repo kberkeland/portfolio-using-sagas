@@ -17,7 +17,7 @@ function* rootSaga() {
     yield takeEvery('GET_PROJECTS', getProjects);
     yield takeEvery('GET_TAGS', getTags);
     yield takeEvery('ADD_PROJECT', addProject);
-    yield takeEvery('DELETE_PLANT', deleteProject);
+    yield takeEvery('DELETE_PROJECT', deleteProject);
 }
 
 // saga that will POST a new project to the database
@@ -48,7 +48,7 @@ function* getProjects() {
 // saga function for DELETE where a project is passed in
 function* deleteProject(action) {
     try {
-        yield axios.delete(`/api/plant?id=${action.payload}`);
+        yield axios.delete(`/projects/delete/${action.payload}`);
         const nextAction = {type: 'GET_PROJECTS'};
         yield put(nextAction);
     } catch (error) {

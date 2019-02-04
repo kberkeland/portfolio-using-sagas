@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProjectListB from './ProjectListB.js';
+import Header from './../Header.js';
 import { connect } from 'react-redux';
 import './Project.css';
 
@@ -15,9 +16,10 @@ class ProjectHome extends Component {
         return (
             <div>
                 <Paper justify="center" elevation={1}>
-                        { this.props.reduxStore.projects.map((project) => (
-                            <ProjectListB key={project.id} project={project} />
-                        ))}
+                    <Header />
+                    { this.props.reduxStore.projects.map((project) => (
+                        <ProjectListB key={project.id} project={project} />
+                    ))}
                 </Paper>
             </div>
         )

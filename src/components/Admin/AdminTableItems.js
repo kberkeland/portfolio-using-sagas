@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 
 // material-ui imput statements
 import TableCell from '@material-ui/core/TableCell';
@@ -11,8 +12,9 @@ import IconButton from '@material-ui/core/IconButton';
 class AdminTableItems extends Component {
 
     handleDeleteClick = () => {
-        const action = {type: 'DELETE_PLANT', payload: this.props.projects.id};
+        const action = {type: 'DELETE_PROJECT', payload: this.props.projects.id};
         this.props.dispatch(action);
+        swal("Project deleted", "You have deleted the project.", "success");
     } // end handleDeleteClick
 
     render() {

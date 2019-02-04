@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Project.css';
+import GitHubLink from './GitHubLink.js';
+import WebsiteLink from './WebsiteLink.js';
 
 // material-ui import statements
 import Typography from '@material-ui/core/Typography';
@@ -21,9 +23,14 @@ class ProjectListB extends Component {
                             <Typography gutterBottom variant="subtitle1">
                                 {this.props.project.name}
                             </Typography>
+                            <Grid item >
                             <Typography gutterBottom >
-                                {this.props.project.github}
+                                {this.props.project.github != null ? <GitHubLink github={this.props.project.github}/> : ""}
                             </Typography>
+                            <Typography gutterBottom >
+                                {this.props.project.website != null ? <WebsiteLink website={this.props.project.website}/> : ""}
+                            </Typography>
+                            </Grid>
                             <Typography component="p">
                                 {this.props.project.description}
                             </Typography>
